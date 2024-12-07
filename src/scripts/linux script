@@ -1,1 +1,9 @@
+#!/bin/bash
+
+REPO_ROOT_DIR=`git rev-parse --show-toplevel`
+find ${REPO_ROOT_DIR} -type f -name "*.class" -delete
+pushd ${REPO_ROOT_DIR}
+javac src/il/ac/tau/cs/sw1/ex3/*.java
+java -cp src il.ac.tau.cs.sw1.ex3.BigramModelTester
+popd
 
